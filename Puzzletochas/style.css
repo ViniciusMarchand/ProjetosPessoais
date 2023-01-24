@@ -16,20 +16,28 @@ height: 47vw;
 
 }
 .wrapp-buttons, .wrapp-buttons-tb{
-    border: solid black;
+    /*border: solid black;*/
     height: 100px;
     width: 700px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-
 .button{
-    border: solid blue;
+    border-radius: 2px;
     width: 75px;
     height: 75px;
+    box-shadow: 3px 3px  rgba(0, 0, 0, 0.298);
 }
 
 #b3{
     margin-top: 50px;
+}
+
+#b1, #b3, #b5, #b7{
+    background-image: url("Button1.png");
+}
+
+#b2, #b4, #b6{
+    background-image: url("Button2.png");
 }
