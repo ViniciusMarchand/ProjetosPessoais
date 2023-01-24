@@ -1,5 +1,6 @@
 let buttons = [1, 2, 3, 4, 5, 6, 7];
 function getId(id) {
+    const inicial = id;
     for (let c = 0; c < 3; c++) {
 
         let imageNum;
@@ -23,11 +24,21 @@ function getId(id) {
             }
         }
         if(c == 0){
-            imageNum--;
-            if(imageNum==0){
-                imageNum = 7;
+            let idNum = inicial.charAt(1);
+            idNum--;
+            if(idNum <=0){
+                idNum = 7;
             }
-            id = "b" + imageNum;
+            id = "b" + idNum;
+        }
+        if(c == 1){
+            let idNum = inicial.charAt(1);
+            idNum++;
+            if(idNum >=8){
+                idNum = 1;
+            }
+            id = "b" + idNum;
+
         }
     }
 }
