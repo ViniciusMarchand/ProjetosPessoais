@@ -13,38 +13,21 @@ function getId(id) {
                 imageNum = id.charAt(1);
                 
                 if (buttons[imageNum - 1] == false) {
-                    
-                    const element = document.querySelector('style');
-                    const stylesheet = element.sheet;
-
-                    stylesheet.insertRule('#' + id + ' {box-shadow: 0px 0px  rgba(0, 0, 0, 0.298);}');
-
-
-                    if (imageNum % 2 == 1) {
-                        stylesheet.insertRule('#' + id + ' {background-image: url("Button1Sombra.png");}');
-                    } else {
-                        stylesheet.insertRule('#' + id + ' {background-image: url("Button2Sombra.png");}');
-                    }
-
                     buttons[imageNum - 1] = true;
+                    if(imageNum %2 == 1){
+                        document.getElementById(id).style.backgroundImage = "url('Button1Sombra.png')"
+                    }else{
+                        document.getElementById(id).style.backgroundImage = "url('Button2Sombra.png')"
+                    }
 
                 }else if (buttons[imageNum -1] == true){
-
-                   
-                    const element = document.querySelector('style');
-                    const stylesheet = element.sheet;
-
-                    stylesheet.deleteRule('#' + id + ' {background-image: url("Button2Sombra.png");}');
-                    stylesheet.deleteRule('#' + id + ' {background-image: url("Button1Sombra.png");}');
-                    stylesheet.deleteRule('#' + id + ' {box-shadow: 0px 0px  rgba(0, 0, 0, 0.298);}');
-
-                    if (imageNum % 2 == 1) {
-                        stylesheet.insertRule('#' + id + ' {background-image: url("Button1.png");}');
-                    } else {
-                        stylesheet.insertRule('#' + id + ' {background-image: url("Button2.png");}');
-                    }
-  
                     buttons[imageNum - 1] = false;
+                    if(imageNum %2 == 1){
+                        document.getElementById(id).style.backgroundImage = "url('Button1.png')"
+                    }else{
+                        document.getElementById(id).style.backgroundImage = "url('Button2.png')"
+                    }
+
                 }
 
 
