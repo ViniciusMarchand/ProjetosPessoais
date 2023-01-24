@@ -24,8 +24,12 @@ height: 47vw;
     justify-content: space-around;
 }
 
-#b1 , #b2{
+.button{
     border: solid blue;
     width: 75px;
     height: 75px;
+}
+
+#b3{
+    margin-top: 50px;
 }
