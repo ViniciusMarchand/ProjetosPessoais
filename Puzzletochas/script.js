@@ -14,6 +14,8 @@ function getId(id) {
                 
                 if (buttons[imageNum - 1] == false) {
                     buttons[imageNum - 1] = true;
+
+                    document.getElementById(id).style.boxShadow = "0px 0px  rgba(0, 0, 0, 0.298)"
                     if(imageNum %2 == 1){
                         document.getElementById(id).style.backgroundImage = "url('Button1Sombra.png')"
                     }else{
@@ -22,6 +24,8 @@ function getId(id) {
 
                 }else if (buttons[imageNum -1] == true){
                     buttons[imageNum - 1] = false;
+
+                    document.getElementById(id).style.boxShadow = "3px 3px  rgba(0, 0, 0, 0.298)"
                     if(imageNum %2 == 1){
                         document.getElementById(id).style.backgroundImage = "url('Button1.png')"
                     }else{
