@@ -9,39 +9,44 @@ function getId(id) {
             let testID = "b" + i;
 
             if (id == testID) {
-                imageNum = testID.charAt(1);
+
+                imageNum = id.charAt(1);
                 
                 if (buttons[imageNum - 1] == false) {
-                    buttons[imageNum - 1] = true;
+                    
                     const element = document.querySelector('style');
                     const stylesheet = element.sheet;
 
-                    stylesheet.insertRule('#' + testID + ' {box-shadow: 0px 0px  rgba(0, 0, 0, 0.298);}');
+                    stylesheet.insertRule('#' + id + ' {box-shadow: 0px 0px  rgba(0, 0, 0, 0.298);}');
 
 
                     if (imageNum % 2 == 1) {
-                        stylesheet.insertRule('#' + testID + ' {background-image: url("Button1Sombra.png");}');
+                        stylesheet.insertRule('#' + id + ' {background-image: url("Button1Sombra.png");}');
                     } else {
-                        stylesheet.insertRule('#' + testID + ' {background-image: url("Button2Sombra.png");}');
+                        stylesheet.insertRule('#' + id + ' {background-image: url("Button2Sombra.png");}');
                     }
+
+                    buttons[imageNum - 1] = true;
 
                 }else if (buttons[imageNum -1] == true){
 
-                    buttons[imageNum - 1] = false;
+                   
                     const element = document.querySelector('style');
                     const stylesheet = element.sheet;
 
-                    stylesheet.insertRule('#' + testID + ' {box-shadow: 3px 3px  rgba(0, 0, 0, 0.298);}');
-
+                    stylesheet.deleteRule('#' + id + ' {background-image: url("Button2Sombra.png");}');
+                    stylesheet.deleteRule('#' + id + ' {background-image: url("Button1Sombra.png");}');
+                    stylesheet.deleteRule('#' + id + ' {box-shadow: 0px 0px  rgba(0, 0, 0, 0.298);}');
 
                     if (imageNum % 2 == 1) {
-                        stylesheet.deleteRule('#' + testID + ' {background-image: url("Button1Sombra.png");}')
+                        stylesheet.insertRule('#' + id + ' {background-image: url("Button1.png");}');
                     } else {
-                        stylesheet.deleteRule('#' + testID + ' {background-image: url("Button2Sombra.png");}')
-                    }              
+                        stylesheet.insertRule('#' + id + ' {background-image: url("Button2.png");}');
+                    }
   
-
+                    buttons[imageNum - 1] = false;
                 }
+
 
 
             }
@@ -66,6 +71,5 @@ function getId(id) {
 
         }
     }
+
 }
-
-
