@@ -41,3 +41,7 @@ height: 47vw;
 #b2, #b4, #b6{
     background-image: url("Button2.png");
 }
+
+#b6{
+    margin-right: 55px;
+}

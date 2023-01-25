@@ -1,5 +1,4 @@
 let buttons = [false, false, false, false, false, false, false];
-
 function getId(id) {
     const inicial = id;
     for (let c = 0; c < 3; c++) {
@@ -58,5 +57,14 @@ function getId(id) {
 
         }
     }
-
+    let ganhou = false;
+    for(let i = 0; i<7;i++){
+        if(buttons[i] == false){
+            ganhou = false;
+            break;
+        }
+        ganhou = true;
+    }
+    if(ganhou)
+        alert("Puzzle concluído.")
 }
